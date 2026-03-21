@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>War Battle - Stratégie</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            margin: 0;
+            background: linear-gradient(120deg, #1e1e2f, #2c2c54);
+            color: white;
+        }
+
+        header {
+            background: #111;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav a {
+            color: #00d4ff;
+            margin: 0 10px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #ff4d4d;
+        }
+
+        main {
+            padding: 20px;
+            animation: fadeIn 1s;
+        }
+
+        .tip {
+            background: rgba(255,255,255,0.05);
+            padding: 15px;
+            margin: 10px 0;
+            border-left: 5px solid #00d4ff;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .tip:hover {
+            transform: scale(1.03);
+            border-left: 5px solid #ff4d4d;
+        }
+
+        footer {
+            background: #111;
+            text-align: center;
+            padding: 10px;
+        }
+
+        @keyframes fadeIn {
+            from {opacity:0;}
+            to {opacity:1;}
+        }
+
+        .btn {
+            background: #00d4ff;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+
+        .btn:hover {
+            background: #ff4d4d;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>War Battle</h1>
+    <nav>
+        <a href="index.html">Accueil</a>
+        <a href="regles.html">Règles</a>
+        <a href="materiel.html">Matériel</a>
+        <a href="strategie.html">Stratégie</a>
+    </nav>
+</header>
+
+<main>
+    <h2>🧠 Stratégies pour gagner</h2>
+
+    <div class="tip">
+        <h3>⏳ Attendre le bon moment</h3>
+        <p>Ne joue pas tes meilleures cartes trop tôt.</p>
+    </div>
+
+    <div class="tip">
+        <h3>🎭 Bluffer</h3>
+        <p>Fais croire à ton adversaire que tu es faible pour le surprendre.</p>
+    </div>
+
+    <div class="tip">
+        <h3>📊 Observer</h3>
+        <p>Analyse les cartes déjà jouées pour anticiper.</p>
+    </div>
+
+    <div class="tip">
+        <h3>⚡ Attaque rapide</h3>
+        <p>Parfois, attaquer fort dès le début peut déstabiliser l’adversaire.</p>
+    </div>
+
+    <button class="btn" onclick="proTip()">Astuce secrète 😏</button>
+</main>
+
+<footer>
+    <p>Site créé par Léopold BONIN 😎</p>
+</footer>
+
+<script>
+function proTip() {
+    alert("🔥 Astuce pro : adapte ta stratégie selon ton adversaire !");
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>War Battle</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: linear-gradient(120deg, #1e1e2f, #2c2c54);
+            color: white;
+        }
+
+        header {
+            background-color: #111;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 0 10px black;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        nav {
+            margin-top: 10px;
+        }
+
+        nav a {
+            color: #00d4ff;
+            margin: 0 10px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #ff4d4d;
+        }
+
+        main {
+            padding: 20px;
+            animation: fadeIn 1s ease-in;
+        }
+
+        footer {
+            background-color: #111;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Bouton stylé */
+        .btn {
+            background: #00d4ff;
+            border: none;
+            padding: 10px 15px;
+            color: black;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #ff4d4d;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>War Battle</h1>
+    <nav>
+        <a href="index.html">Accueil</a>
+        <a href="regles.html">Règles</a>
+        <a href="materiel.html">Matériel</a>
+        <a href="strategie.html">Stratégie</a>
+    </nav>
+</header>
+
+<main>
+    <h2>Bienvenue sur le site de War Battle</h2>
+
+    <p>
+        Le jeu de War Battle est un jeu qui a été créé par deux ados, Léopold BONIN et Lucas GOICHONS.
+        Ce sont deux potes qui ont pensé et réalisé le jeu avec une imprimante 3D.
+    </p>
+
+    <h2>Comment ?</h2>
+
+    <p>
+        Lucas a imaginé et conçu en 3D sur son logiciel pour ensuite l'imprimer avec son imprimante.
+        Léopold, lui, a créé les cartes et le site web.
+        Les règles ont été inventées ensemble 😊
+    </p>
+
+    <button class="btn" onclick="message()">Clique ici 😎</button>
+</main>
+
+<footer>
+    <p>Site créé par Léopold BONIN 😎</p>
+</footer>
+
+<script>
+    function message() {
+        alert("Bienvenue sur War Battle 🔥 !");
+    }
+</script>
+
+</body>
+</html>
