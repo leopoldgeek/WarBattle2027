@@ -81,6 +81,16 @@
             background: #ff4d4d;
             color: white;
         }
+
+        .emoji {
+    display: inline-block;
+    transition: 0.3s;
+}
+
+.btn:hover .emoji {
+    transform: translateY(5px);
+}
+        
     </style>
 </head>
 
@@ -145,13 +155,12 @@
         <h3>📜 Règle du jeu</h3>
         <p>
             vous pouvez télécharger le fichier en clkiquant sur le lien si-dessous : 
-            <button class="btn" onclick="télécharger()">Télécharger les règles du jeu 📜</button>
+            <button class="btn" onclick="telecharger()">
+    <span class="emoji">📥</span> Télécharger
+            </button>
         </p>
     </div>
-
-    <a href="war_battle.pdf" download class="btn">
-    Télécharger le PDF 📜
-</a>
+    
 </main>
 
 <footer>    <p>Site créé par un des ado 😎</p>
@@ -168,6 +177,14 @@
     function astuce() {
         alert("💡 Astuce : garde tes cartes puissantes pour la fin !");
     }
+
+    function telecharger() {
+    let lien = document.createElement("a");
+    lien.href = "war_battle.pdf";
+    lien.download = "War_Battle.pdf";
+    lien.click();
+        alert("
+}
 </script>
 
 </body>
