@@ -39,6 +39,7 @@ main {
     border-radius: 10px;
     max-width: 500px;
     margin: auto;
+    box-shadow: 0 0 10px black;
 }
 
 input, textarea {
@@ -56,15 +57,23 @@ textarea {
 .btn {
     background: #00d4ff;
     border: none;
-    padding: 10px;
+    padding: 12px;
     width: 100%;
     cursor: pointer;
     font-weight: bold;
+    border-radius: 5px;
+    transition: 0.3s;
 }
 
 .btn:hover {
     background: #ff4d4d;
     color: white;
+}
+
+#status {
+    text-align: center;
+    margin-top: 10px;
+    font-weight: bold;
 }
 
 footer {
@@ -97,44 +106,64 @@ footer {
 <div class="form-box">
 
     <input type="text" id="nom" placeholder="Votre nom">
-
     <input type="text" id="objet" placeholder="Objet">
-
     <textarea id="message" placeholder="Votre message..."></textarea>
 
     <button class="btn" onclick="envoyer()">📨 Envoyer</button>
+
+    <div id="status"></div>
 
 </div>
 
 </main>
 
 <footer>
-    <p>Site créé par un des ado 😎</p>
-    <p>Contactez nous : warbattle2027@outlook.com</p>
-    <p>index, plan du site :</p>
-        <a href="index.html">Accueil</a>
-        <a href="regles.html">Règles</a>
-        <a href="materiel.html">Matériel</a>
-        <a href="strategie.html">Stratégie</a>
-        <a href="jeu.html">Jeu</a>
-        <a href="contact.html">Nous contacter</a>
+    <p>Site créé par un des ados 😎</p>
+    <p>Contact : warbattle2027@outlook.com</p>
 </footer>
 
+<!-- EmailJS -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
 <script>
+// 🔑 TA CLÉ (déjà bonne)
+(function(){
+    emailjs.init("KWhB1RTrvcP9Gh9Qc");
+})();
+
 function envoyer() {
     let nom = document.getElementById("nom").value;
     let objet = document.getElementById("objet").value;
     let message = document.getElementById("message").value;
 
-    let mail = "mailto:warbattle2027@outlook.com"
-        + "?subject=" + encodeURIComponent(objet)
-        + "&body=" + encodeURIComponent(
-            "Nom : " + nom + "\n\nMessage :\n" + message
-        );
+    if(!nom || !objet || !message){
+        document.getElementById("status").innerHTML = "❌ Remplis tous les champs";
+        return;
+    }
 
-    window.location.href = mail;
+    document.getElementById("status").innerHTML = "⏳ Envoi en cours...";
+
+    let params = {
+        nom: nom,
+        objet: objet,
+        message: message
+    };
+
+    emailjs.send("service_0l9rz6m", "template_u6hg9hg", params)
+    .then(function() {
+        document.getElementById("status").innerHTML = "✅ Message envoyé avec succès !";
+        
+        // reset du formulaire
+        document.getElementById("nom").value = "";
+        document.getElementById("objet").value = "";
+        document.getElementById("message").value = "";
+
+    }, function(error) {
+        document.getElementById("status").innerHTML = "❌ Erreur d'envoi";
+        console.log(error);
+    });
 }
 </script>
 
 </body>
-</html>
+</html>f
